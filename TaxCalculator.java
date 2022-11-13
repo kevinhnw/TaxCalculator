@@ -12,6 +12,7 @@ public class TaxCalculator {
    public static int getIncome(Scanner console) {
       System.out.print("How much income do you have? Please type your answer here: ");
       int income = console.nextInt();
+      System.out.println("$" + income);
       return income;
    }
 }
