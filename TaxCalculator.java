@@ -30,4 +30,20 @@ public class TaxCalculator {
       System.out.println(file);
       return file;
    }
+   
+   // identifies what status the user is filing under and runs the correct program
+   public static String sortFile(String file) {
+      if (file == "Single") {
+         singleTax();
+      }
+      else if (file == "Married Jointly") {
+         jointTax();
+      }
+      else if (file == "Married Sparately") {
+         seperateTax();
+      }
+      else {
+         houseTax();
+      }    
+   }
 }
