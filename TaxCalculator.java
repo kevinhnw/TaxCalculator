@@ -10,8 +10,7 @@ public class TaxCalculator {
    
       double income = getIncome(console);
       
-      String file = getFile(console);
-   
+      int file = getFile(console);   
    }
 
    // prompts the user for their income
@@ -24,26 +23,26 @@ public class TaxCalculator {
    }
    
    // prompts the user for filing status
-   public static String getFile(Scanner console) {
-      System.out.print("How are you filing? Single, Married Jointly, Married Separately, Head of Household? Please type your answer here: ");
-      String file = console.nextLine();
-      System.out.println(file);
+   public static int getFile(Scanner console) {
+      System.out.print("How are you filing? Single(1), Married Jointly(2), Married Separately(3), Head of Household(4)? Please type the corresponding number here: ");
+      int file = console.nextInt();
       return file;
    }
    
    // identifies what status the user is filing under and runs the correct program
-   public static String sortFile(String file) {
-      if (file == "Single") {
-         singleTax();
+   public static void sortFile(int file, double income) {
+   
+      if (file == 1) {
+         double taxedIncome = singleTax(income);
       }
-      else if (file == "Married Jointly") {
-         jointTax();
+      else if (file == 2) {
+         double taxedIncome = jointTax(income);
       }
-      else if (file == "Married Sparately") {
-         seperateTax();
+      else if (file == 3) {
+         double taxedIncome = seperateTax(income);
       }
       else {
-         houseTax();
-      }    
+         double taxedIncome = houseTax(income);
+      }  
    }
 }
