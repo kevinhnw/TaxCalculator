@@ -15,6 +15,8 @@ public class TaxCalculator {
       sortFile(file, income);  
       
       double taxedSocial = socialSecurityTax(income);
+      
+      double taxedMedicare = medicareTax(income);
    }
 
    // prompts the user for their income
@@ -236,4 +238,15 @@ public class TaxCalculator {
       return taxedSocial;     
       
    }
+   
+   // calculates the Medicare tax of the user
+   public static double medicareTax(double income) {
+      
+      double taxedMedicare = 0.0;
+      taxedMedicare = 0.0145 * income;
+      System.out.println("Medicare Tax: $" + taxedMedicare);
+      
+      return taxedMedicare;     
+      
+   }   
 }
