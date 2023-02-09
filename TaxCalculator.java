@@ -13,6 +13,8 @@ public class TaxCalculator {
       int file = getFile(console); 
       
       sortFile(file, income);  
+      
+      double taxedSocial = socialSecurityTax(income);
    }
 
    // prompts the user for their income
@@ -222,5 +224,16 @@ public class TaxCalculator {
       }
       
       return taxedIncome;
+   }
+   
+   // calculates the social security tax of the user
+   public static double socialSecurityTax(double income) {
+      
+      double taxedSocial = 0.0;
+      taxedSocial = 0.062 * income;
+      System.out.println("Social Security Tax: $" + taxedSocial);
+      
+      return taxedSocial;     
+      
    }
 }
